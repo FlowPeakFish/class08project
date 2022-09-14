@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="添加"
+          android:id="@+id/add"/>
+    <item android:title="删除"
+          android:id="@+id/delete"/>
+    <item android:title="修改"
+          android:id="@+id/modify"/>
+    <item android:title="退出"
+          android:id="@+id/exit"/>
+</menu>
