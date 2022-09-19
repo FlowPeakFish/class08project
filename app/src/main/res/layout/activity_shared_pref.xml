@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".SharedPrefActivity">
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#0B80B5"
+            android:text="日记本"
+            android:textSize="40sp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"/>
+
+    <EditText
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:hint="请输入日记"/>
+
+    <Button
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="保存" />
+</LinearLayout>

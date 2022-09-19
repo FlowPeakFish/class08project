@@ -8,9 +8,10 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-//1. 在页面创建时显示一条短的Toast √
-//2. 通过点击按钮显示一条长的Toast √
-//3. 通过点击按钮显示一条居中的带图片的Toast
+/**
+ * 4.1 Toast消息提示
+ * 4.2 Dialog对话框
+ */
 public class ToastActivity extends AppCompatActivity {
 
     Button button2;

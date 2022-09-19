@@ -1,5 +1,6 @@
 package cn.fengyu.class08project;
 
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,8 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * 4.3 Menu菜单
+ * 4.4 Spinner下拉列表框
+ */
 public class MenuActivity extends AppCompatActivity {
-
     Spinner spinner;
     Button button7;
 
@@ -50,7 +54,7 @@ public class MenuActivity extends AppCompatActivity {
         });
 
         button7 = findViewById(R.id.button7);
-        button7.setOnClickListener(v->{
+        button7.setOnClickListener(v -> {
             // 方式一
             // TextView view1 = (TextView) spinner.getSelectedView();
             // String choseString = view1.getText().toString();
@@ -76,8 +80,8 @@ public class MenuActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull @NotNull
-                                             MenuItem item) {
-        switch (item.getItemId()){
+                                         MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.exit:
                 Toast.makeText(MenuActivity.this,
                         "您点击了退出按钮",
