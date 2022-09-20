@@ -22,6 +22,7 @@ import java.util.Arrays;
 
 /**
  * 5.2 文件存储
+ * 5.4 权限申请
  * Ctrl + Alt + M
  */
 public class FileActivity extends AppCompatActivity {
@@ -54,10 +55,8 @@ public class FileActivity extends AppCompatActivity {
             if (
                     PackageManager.PERMISSION_DENIED ==
                             checkSelfPermission(Manifest.permission.CALL_PHONE)) {
-                requestPermissions(new String[]{Manifest.permission.CALL_PHONE},
-                        10001);
+                requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 10001);
             }
-            ;
         }
 
         // 绑定
