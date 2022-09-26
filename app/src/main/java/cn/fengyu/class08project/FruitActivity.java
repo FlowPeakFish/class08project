@@ -1,7 +1,7 @@
 package cn.fengyu.class08project;
 
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.view.View;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import cn.fengyu.class08project.entity.Fruit;
@@ -57,5 +57,21 @@ public class FruitActivity extends AppCompatActivity {
                 fruitList
         );
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // 第一种，使用view获取对应空间上的值
+                // String fruitName = ((TextView) view.findViewById(R.id.fruit_name)).getText().toString();
+                // Toast.makeText(FruitActivity.this,
+                //         "选择了：" + fruitName,
+                //         Toast.LENGTH_SHORT).show();
+
+                // 第二种，使用position从动态数组中获取对象
+                Toast.makeText(FruitActivity.this,
+                        "选择了：" + fruitList.get(position).getName(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

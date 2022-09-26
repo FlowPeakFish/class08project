@@ -23,9 +23,9 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         Fruit fruit = getItem(position);
         View fruitItem;
-        ImageView itemImageView;
-        TextView itemName;
-        TextView itemPrice;
+        // ImageView itemImageView;
+        // TextView itemName;
+        // TextView itemPrice;
         ViewHolder viewHolder;
         if (convertView == null) {
             // FruitActivity(getContext()) -> ListView列表(parent) ->
