@@ -23,10 +23,13 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         Fruit fruit = getItem(position);
 
+        // FruitActivity(getContext()) -> ListView列表(parent) ->
+        //      子项布局(R.layout.fruit_item) -> 多个控件(子项布局.findViewById)
         // 为每一个子项Item加载设定的布局
         View fruitItem = LayoutInflater.from(getContext()).inflate(R.layout.fruit_item,
                 parent, false);
 
+        // 子项布局中的多个控件设置参数
         ImageView itemImageView = fruitItem.findViewById(R.id.fruit_image_view);
         TextView itemName = fruitItem.findViewById(R.id.fruit_name);
         TextView itemPrice = fruitItem.findViewById(R.id.fruit_price);
