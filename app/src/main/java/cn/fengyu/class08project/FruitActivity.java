@@ -26,16 +26,25 @@ public class FruitActivity extends AppCompatActivity {
         // 动态数组准备数据
         List<Fruit> fruitList = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             Fruit pineApple = new Fruit(R.drawable.pineapple, "菠萝", "16.9元/kg");
             fruitList.add(pineApple);
 
             fruitList.add(new Fruit(R.drawable.mango, "芒果", "29.9元/kg"));
 
+            // Fruit.builder()
+            //         .imageId(R.drawable.pomegranate)
+            //         .name("石榴")
+            //         .price("15元/kg")
+            //         .build();
             Fruit.Builder builder = new Fruit.Builder();
             Fruit pomegranate = builder.imageId(R.drawable.pomegranate)
                     .name("石榴").price("15元/kg").build();
-            fruitList.add(pomegranate);
+            // fruitList.add(Fruit.builder()
+            //         .imageId(R.drawable.pomegranate)
+            //         .name("石榴")
+            //         .price("15元/kg")
+            //         .build());
         }
 
         // 4、配置适配器

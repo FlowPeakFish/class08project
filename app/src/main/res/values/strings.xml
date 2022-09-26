@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">学生信息管理系统</string>
+    <string name="app_name">水果店</string>
     <string name="short_toast">strings - short toast example</string>
 </resources>

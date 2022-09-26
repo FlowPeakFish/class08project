@@ -22,22 +22,46 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         Fruit fruit = getItem(position);
+        View fruitItem;
+        ImageView itemImageView;
+        TextView itemName;
+        TextView itemPrice;
+        ViewHolder viewHolder;
+        if (convertView == null) {
+            // FruitActivity(getContext()) -> ListView列表(parent) ->
+            //      子项布局(R.layout.fruit_item) -> 多个控件(子项布局.findViewById)
+            // 为每一个子项Item加载设定的布局
+            fruitItem = LayoutInflater.from(getContext()).inflate(R.layout.fruit_item,
+                    parent, false);
+            // 子项布局中的多个控件设置参数
+            viewHolder = new ViewHolder();
+            viewHolder.itemImageView = fruitItem.findViewById(R.id.fruit_image_view);
+            viewHolder.itemName = fruitItem.findViewById(R.id.fruit_name);
+            viewHolder.itemPrice = fruitItem.findViewById(R.id.fruit_price);
+            fruitItem.setTag(viewHolder);
 
-        // FruitActivity(getContext()) -> ListView列表(parent) ->
-        //      子项布局(R.layout.fruit_item) -> 多个控件(子项布局.findViewById)
-        // 为每一个子项Item加载设定的布局
-        View fruitItem = LayoutInflater.from(getContext()).inflate(R.layout.fruit_item,
-                parent, false);
+            // fruitItem.setTag(R.id.fruit_image_view,itemImageView);
+            // fruitItem.setTag(R.id.fruit_name,itemName);
+            // fruitItem.setTag(R.id.fruit_price,itemPrice);
+        } else {
+            fruitItem = convertView;
+            viewHolder = (ViewHolder) fruitItem.getTag();
 
-        // 子项布局中的多个控件设置参数
-        ImageView itemImageView = fruitItem.findViewById(R.id.fruit_image_view);
-        TextView itemName = fruitItem.findViewById(R.id.fruit_name);
-        TextView itemPrice = fruitItem.findViewById(R.id.fruit_price);
+            // itemImageView = (ImageView) fruitItem.getTag(R.id.fruit_image_view);
+            // itemName = (TextView) fruitItem.getTag(R.id.fruit_name);
+            // itemPrice = (TextView) fruitItem.getTag(R.id.fruit_price);
+        }
 
-        itemImageView.setImageResource(fruit.getImageId());
-        itemName.setText(fruit.getName());
-        itemPrice.setText(fruit.getPrice());
+        viewHolder.itemImageView.setImageResource(fruit.getImageId());
+        viewHolder.itemName.setText(fruit.getName());
+        viewHolder.itemPrice.setText(fruit.getPrice());
 
         return fruitItem;
+    }
+
+    private class ViewHolder {
+        ImageView itemImageView;
+        TextView itemName;
+        TextView itemPrice;
     }
 }

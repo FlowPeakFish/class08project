@@ -1,5 +1,11 @@
 package cn.fengyu.class08project.entity;
 
+// import lombok.AllArgsConstructor;
+// import lombok.Data;
+
+// @Data
+// @Builder
+// @AllArgsConstructor
 public class Fruit {
     private int imageId;
     private String name;
