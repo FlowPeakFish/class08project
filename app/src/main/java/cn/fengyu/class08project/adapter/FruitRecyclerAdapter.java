@@ -44,7 +44,7 @@ public class FruitRecyclerAdapter extends RecyclerView.Adapter<FruitRecyclerAdap
                 parent, false);
         ViewHolder viewHolder = new ViewHolder(fruitItem);
         // 图片监听事件
-        viewHolder.fruitImage.setOnClickListener`(new View.OnClickListener() {
+        viewHolder.fruitImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int position = viewHolder.getBindingAdapterPosition();
