@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import cn.fengyu.class08project.adapter.FruitRecyclerAdapter;
 import cn.fengyu.class08project.entity.Fruit;
 
@@ -38,8 +39,10 @@ public class RecyclerFruitActivity extends AppCompatActivity {
         // 参数1：数据源
         FruitRecyclerAdapter adapter = new FruitRecyclerAdapter(fruitList);
         // 5、创建布局管理器
-        LinearLayoutManager manager = new LinearLayoutManager(RecyclerFruitActivity.this);
-        manager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        // LinearLayoutManager manager = new LinearLayoutManager(RecyclerFruitActivity.this);
+        // manager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(3,
+                StaggeredGridLayoutManager.VERTICAL);
 
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
