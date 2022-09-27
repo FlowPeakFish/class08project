@@ -39,6 +39,7 @@ public class RecyclerFruitActivity extends AppCompatActivity {
         FruitRecyclerAdapter adapter = new FruitRecyclerAdapter(fruitList);
         // 5、创建布局管理器
         LinearLayoutManager manager = new LinearLayoutManager(RecyclerFruitActivity.this);
+        manager.setOrientation(LinearLayoutManager.HORIZONTAL);
 
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
