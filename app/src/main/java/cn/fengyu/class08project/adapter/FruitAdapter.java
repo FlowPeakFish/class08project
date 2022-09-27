@@ -1,4 +1,4 @@
-package cn.fengyu.class08project;
+package cn.fengyu.class08project.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import cn.fengyu.class08project.R;
 import cn.fengyu.class08project.entity.Fruit;
 
 import java.util.List;

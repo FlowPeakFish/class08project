@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import cn.fengyu.class08project.adapter.FruitAdapter;
 import cn.fengyu.class08project.entity.Fruit;
 
 import java.util.ArrayList;
