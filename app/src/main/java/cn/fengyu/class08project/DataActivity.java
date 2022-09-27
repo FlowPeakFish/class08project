@@ -34,10 +34,13 @@ public class DataActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 方式一
-                ContentValues values = new ContentValues();
-                values.put("name", "张三");
-                values.put("department", "艺术学院");
-                db.insert("stu_info", "", values);
+                // ContentValues values = new ContentValues();
+                // values.put("name", "张三");
+                // values.put("department", "艺术学院");
+                // db.insert("stu_info", "", values);
+
+                // 方式二
+                db.execSQL("INSERT INTO stu_info ('name', 'department') VALUES ('李四','艺术学院')");
                 Toast.makeText(DataActivity.this, "插入成功", Toast.LENGTH_SHORT).show();
             }
         });
