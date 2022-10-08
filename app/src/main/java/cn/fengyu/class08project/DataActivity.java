@@ -69,5 +69,38 @@ public class DataActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btnModify.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // 方式一
+                // ContentValues values = new ContentValues();
+                // values.put("department","智能科技");
+                // db.update("stu_info",
+                //         values,
+                //         "id=?",
+                //         new String[]{"8"});
+
+                // 方式二
+                db.execSQL("UPDATE stu_info SET department = '智能科技2' WHERE id = '8'");
+                Toast.makeText(DataActivity.this,
+                        "修改成功",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 方式一
+                // db.delete("stu_info","id!=?",new String[]{"1"});
+
+                // 方式二
+                db.execSQL("DELETE FROM stu_info WHERE id != '1'");
+                Toast.makeText(DataActivity.this,
+                        "删除成功",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
