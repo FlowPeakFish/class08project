@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".media.MusicPlayActivity">
+
+    <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:gravity="center|center_vertical"
+            android:textSize="40sp"
+            android:layout_marginTop="20dp"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/artist"
+            android:layout_gravity="center"
+            android:textSize="30sp"
+            android:layout_marginTop="20dp"/>
+    <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:srcCompat="@drawable/music_icon"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+        <TextView
+                android:text="1:01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/current"
+                android:layout_weight="0"
+                android:layout_marginLeft="20dp"/>
+        <SeekBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekBar"
+                android:layout_weight="1"/>
+        <TextView
+                android:text="5:20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/end"
+                android:layout_weight="0"
+                android:layout_marginRight="20dp"/>
+    </LinearLayout>
+</LinearLayout>
