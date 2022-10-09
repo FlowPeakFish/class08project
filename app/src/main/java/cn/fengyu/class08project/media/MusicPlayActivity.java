@@ -35,12 +35,7 @@ public class MusicPlayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_play);
 
-        // 2、绑定
-        name = findViewById(R.id.name);
-        artist = findViewById(R.id.artist);
-        current = findViewById(R.id.current);
-        end = findViewById(R.id.end);
-        seekBar = findViewById(R.id.seekBar);
+        initView();
 
         int position = getIntent().getIntExtra("position", 0);
         Cursor cursor = getContentResolver().query(
@@ -117,13 +112,22 @@ public class MusicPlayActivity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
         });
+        seekBar.setMax(player.getDuration());
+        end.setText(milliseconds2Str(player.getDuration()));
+    }
+
+    private void initView() {
+        // 2、绑定
+        name = findViewById(R.id.name);
+        artist = findViewById(R.id.artist);
+        current = findViewById(R.id.current);
+        end = findViewById(R.id.end);
+        seekBar = findViewById(R.id.seekBar);
     }
 
     private void refreshSeekBar() {
         seekBar.setProgress(player.getCurrentPosition());
-        seekBar.setMax(player.getDuration());
         current.setText(milliseconds2Str(player.getCurrentPosition()));
-        end.setText(milliseconds2Str(player.getDuration()));
     }
 
     private String milliseconds2Str(int ms) {
